@@ -16,7 +16,7 @@ public class StrInt2 {
                 String c = word.substring(lcv, lcv+1);
                 int i = word2.indexOf(c);
                 if (i != -1){
-                    word2 = word2.substring(0, i) + word2.substring(beginIndex: i+1);
+                    word2 = word2.substring(0, i) + word2.substring( i+1);
                 } else {
                     System.out.println("Not Anagrams");
                     break;
