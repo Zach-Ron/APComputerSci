@@ -17,3 +17,10 @@ public class LP5_5 {
     }
 
 }
+/*
+Enter a non-negative integer: 86
+8
+6
+
+Process finished with exit code 0
+ */
