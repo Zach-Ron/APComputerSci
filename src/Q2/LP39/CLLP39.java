@@ -2,7 +2,7 @@ package Q2.LP39;
 
 public class CLLP39 {
     private int yearBirth, monthBirth, dayBirth,
-            yearNow, monthNow, dayNow;
+            yearNow, monthNow, dayNow, timeMonths, timeDays;
     private double timeSleep;
     public CLLP39()
     {
@@ -26,7 +26,7 @@ public class CLLP39 {
     }
 
     public void setLengthsSleep(){
-        int timeMonths = ((yearNow - yearBirth) * 12) + (monthNow - monthBirth);
-        int timeDays = (timeMonths * 30) + (dayNow - dayBirth);
+        timeMonths = ((yearNow - yearBirth) * 12) + (monthNow - monthBirth);
+        timeDays = (timeMonths * 30) + (dayNow - dayBirth);
     }
 }
