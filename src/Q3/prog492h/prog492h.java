@@ -19,6 +19,7 @@ public class prog492h {
             print(life, length, wid);
 
 
+
         } catch(IOException e)
         {
             System.out.println("Error: " + e);
@@ -31,9 +32,12 @@ public class prog492h {
         int amnt = 0;
         for (int lcv = 0; lcv < domain.length; lcv++)
         {
-            for (int wcv = 0; wcv < domain[0].length; wcv++)
-                if (domain[lcv+1][wcv])
+            for (int wcv = 0; wcv < domain[0].length; wcv++) {
+                //if (domain[lcv][wcv])
+
+            }
         }
+        return amnt;
     }
 
     public static void print(int[][] domain, int len, int width)
