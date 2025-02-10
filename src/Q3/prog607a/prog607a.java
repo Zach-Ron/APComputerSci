@@ -6,7 +6,7 @@ public class prog607a {
     public static void main(String[] args){
         int ben; //3 = good to go
         String date = "";
-        cl607a.printMenu();
+        Date.printMenu();
         Scanner funne = new Scanner(System.in);
         ben = funne.nextInt();
         while (ben != 0)
@@ -14,9 +14,12 @@ public class prog607a {
 
                 System.out.println("Enter Date (M/D/Y): ");
                 date = funne.next();
+                Date fun = new Date(date);
 
                 if (ben == 1) {
-                    date.encode();
+                    System.out.println(fun.encode());
+                }else if (ben == 2){
+                    System.out.println(fun.decode());
                 }
 
                 Date.printMenu();
@@ -32,4 +35,5 @@ public class prog607a {
 
 
     }
+
 }

@@ -34,20 +34,29 @@ public Date(String date)
         String encodedDate = "";
         int num = Integer.parseInt(parts[0]);
         if (num <= 12) {
-            encodedDate += alphabet[num - 1];
+            encodedDate += alphabet[num - 1] + "/";
         } else {
-            encodedDate += " /";
+            encodedDate += "  /";
         }
         num = Integer.parseInt(parts[1]);
         if (num < 32){
-            
+            String half = parts[1].substring(0,1);
+            encodedDate += alphabet[Integer.parseInt(half) + 16];
+            half = parts[1].substring(1);
+            encodedDate += alphabet[Integer.parseInt(half) + 16] + "/";
         }
-
-            
-
+        else{
+            encodedDate += "  /";
+        }
+        num = Integer.parseInt(parts[2]);
+        if (num > 70 || < )
         return encodedDate.toString();
     }
 
+    public String decode(){
+
+    return null;
+    }
 
 
 
