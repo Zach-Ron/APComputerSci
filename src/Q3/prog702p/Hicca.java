@@ -8,9 +8,18 @@ public class Hicca extends Animal{
     public Hicca(String fName, String lName, double mones){
         super(fName, lName);
         price = mones;
-    }
-    public void setAvg(double mones){
+        add++;
         addPrice += price;
-        add += 1;
+        setAvg();
+    }
+    public void setAvg(){
+        average = addPrice / add;
+    }
+    public double getAvg(){
+        return average;
+    }
+
+    public double getPrice(){
+        return price;
     }
 }

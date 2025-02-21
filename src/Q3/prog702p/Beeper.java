@@ -1,9 +1,9 @@
 package Q3.prog702p;
 
 public class Beeper extends Animal {
-    private int takenSteps;
-    public Beeper(String fName, String lName, int steps){
+    private String what;
+    public Beeper(String fName, String lName, String word){
         super(fName, lName);
-        takenSteps = steps;
+        what = word;
     }
 }

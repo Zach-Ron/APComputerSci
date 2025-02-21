@@ -12,7 +12,7 @@ private String what;
         ln = lName;
     }
 
-    public String getWord(String word){return what;   }
+    public String getWord(){return what;   }
     public String getName(){return fn + ln;}
 
 }
