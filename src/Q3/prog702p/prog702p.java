@@ -32,14 +32,41 @@ public class prog702p {
                 }
             } while (file.hasNext());
 
+            file.close();
+
+            int amnt = 0;
 
             for (Animal a : list){
                 if (a instanceof Hicca){
-                    double price = ((Hicca) a).getPrice();
-                    System.out.println("Hicca: ");
+                    amnt++;
+                    System.out.println(((Hicca) a).getName());
+                    System.out.println("Hicca ");
+                    System.out.println(((Hicca) a).getPrice());
+                    System.out.println();
+                }else if (a instanceof Wallie){
+                    amnt++;
+                    System.out.println(((Wallie) a).getName());
+                    System.out.println("Wallie ");
+                    System.out.println(((Wallie) a).getSteps());
+                    System.out.println();
+                }else if (a instanceof Beeper){
+                    amnt++;
+                    System.out.println(((Beeper) a).getName());
+                    System.out.println("Beeper ");
+                    System.out.println(((Beeper) a).getWord());
                     System.out.println();
                 }
             }
+
+            System.out.println("Total number of Hiccas:" + ((Hicca) list).hiccas());
+            System.out.println("Total number of Wallies:" + ((Wallie) list).wallies());
+            System.out.println("Total number of Beepers:" + ((Beeper) list).beepers());
+            System.out.println("Total number of animals: " + amnt);
+            System.out.println();
+            System.out.println("Average price of Hicca coats: " + ((Hicca) list).getAvg());
+            System.out.println("Average steps taken by Wallies: " + ((Wallie) list).getAvg());
+            System.out.println("Average length of Beeper words: " + ((Beeper) list).getAvg());
+
 
         } catch(IOException e)
         {

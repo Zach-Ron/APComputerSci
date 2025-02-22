@@ -49,7 +49,9 @@ public Date(String date)
             encodedDate += "  /";
         }
         num = Integer.parseInt(parts[2]);
-        if (num > 70 || < )
+        if (num > 1970 && num < 2003){
+            
+        }
         return encodedDate.toString();
     }
 

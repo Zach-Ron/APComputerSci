@@ -22,4 +22,7 @@ public class Hicca extends Animal{
     public double getPrice(){
         return price;
     }
+    public int hiccas(){
+        return add;
+    }
 }

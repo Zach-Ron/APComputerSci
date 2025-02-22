@@ -22,4 +22,12 @@ public class Wallie extends Animal{
         return avgSteps;
     }
 
+    public int getSteps(){
+        return takenSteps;
+    }
+
+    public int wallies(){
+        return amtWallie;
+    }
+
 }
