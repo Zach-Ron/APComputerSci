@@ -3,7 +3,7 @@ package Q3.prog702q;
 public class vehicle implements names {
     private String name;
     private int amntTires;
-    private int price;
+    private double price;
     public vehicle(String n, int tires){
         name = n;
         amntTires = tires;
