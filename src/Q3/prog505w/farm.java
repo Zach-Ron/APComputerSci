@@ -67,7 +67,7 @@ public class farm {
                     }
                 }
             }
-            System.out.printf("Horse %s makes the least money\n");
+            System.out.printf("Horse s makes the least money\n");
             animals.get(minHorseIndex).getName();
 
 

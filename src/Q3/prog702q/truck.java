@@ -3,10 +3,10 @@ package Q3.prog702q;
 public class truck extends vehicle{
     private double price;
     private int milesDriven;
-    public truck(String n, int tires, int miles){
-        super(n, tires);
+    public truck(String n, int tires, int miles, double p){
+        super(n, tires, p);
         milesDriven = miles;
-        price = 50000 - (milesDriven * .25);
+        price = p - (milesDriven * .25);
     }
 
 }

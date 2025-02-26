@@ -12,30 +12,30 @@ public class prog702q {
             Scanner file = new Scanner(new File("Langdat/prog702q.txt"));
             List<vehicle> tech = new ArrayList<>();
             int cnt = 0;
-            int h = file.nextInt();
-            if (h == 1){
-                String name = file.next();
-                int tires = file.nextInt();
-                double price = file.nextDouble();
-                vehicle c = new car(name, tires, price);
-                tech.add(c);
-                cnt++;
-            }
-            else if (h == 2){
-                String name = file.next();
-                int tires = file.nextInt();
-                int miles = file.nextInt();
-                vehicle b = new truck(name, tires, miles);
-                tech.add(b);
-                cnt++;
-            }
-            else if (h == 3){
-                String name = file.next();
-                int tires = file.nextInt();
-                String city = file.next();
-                vehicle t = new bus(name, tires, city);
-                tech.add(t);
-                cnt++; 
+            while (file.hasNext()) {
+                int h = file.nextInt();
+                if (h == 1) {
+                    String name = file.next();
+                    int tires = file.nextInt();
+                    double price = file.nextDouble();
+                    vehicle c = new car(name, tires, price);
+                    tech.add(c);
+                    cnt++;
+                } else if (h == 2) {
+                    String name = file.next();
+                    int tires = file.nextInt();
+                    int miles = file.nextInt();
+                    vehicle t = new truck(name, tires, miles, 50000);
+                    tech.add(t);
+                    cnt++;
+                } else if (h == 3) {
+                    String name = file.next();
+                    int tires = file.nextInt();
+                    String city = file.next();
+                    vehicle b = new bus(name, tires, city, 50000);
+                    tech.add(b);
+                    cnt++;
+                }
             }
 
             double totPriceCars = 0;

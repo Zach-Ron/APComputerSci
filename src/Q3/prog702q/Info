@@ -33,3 +33,19 @@ public interface names
 
 
 Data Location: prog702q.txt
+
+
+
+result:
+Total number of vehicles: 13
+Total price of cars: 33950.0
+Total price of all vehicles: 533950.0
+Longest city name: GreenBay
+Cheapest truck: Fred
+Total number of tires on cars: 15
+Total number of tires on trucks: 95
+Total number of tires on buses: 69
+
+Process finished with exit code 0
+
+
