@@ -7,8 +7,9 @@ public class vehicle implements names {
     public vehicle(String n, int tires){
         name = n;
         amntTires = tires;
+
     }
-public String getNames(){
+public String getName(){
 return name;
         }
 public int getTire(){
