@@ -18,14 +18,23 @@ public class prog703s {
                 int num = file.nextInt();
                 double val = file.nextDouble();
                 if(type == 1){
-
+                    String color = file.next();
+                    mac a = new mac(name, num, val, color);
+                    comp.add(a);
                 }
                 else if (type == 2){
                     double ver = file.nextDouble();
                     windows c = new windows(name, num, val, ver);
-
+                    comp.add(c);
+                }
+                else if (type == 3){
+                    int special = file.nextInt();
+                    linux s = new linux(name, num, val, special);
+                    comp.add(s);
                 }
             }
+
+            System.out.println("The amount of macs with Green and Gold is: " + a.getAmnt())
 
         } catch(IOException e)
         {
