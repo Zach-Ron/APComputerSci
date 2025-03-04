@@ -26,3 +26,9 @@ public interface comps
 
 
 Data Location: prog703s.dat
+
+
+Results:
+The amount of macs with Green and Gold is: 1
+The amount of Windows machines on V 7.0 is: 2
+The amount of Linux codes that end with 5 is: 4
