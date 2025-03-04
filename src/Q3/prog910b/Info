@@ -1,0 +1,43 @@
+PROGRAM 910b
+(covering all the bases)
+
+Program Description:  Write a program that prints a conversion for a variety of numbers as specified by the user.
+ The conversion from base 10 to some other base will be in the range base 2 through base 16.
+
+The principle of conversion includes the following steps:
+
+Carry out successive divisions by the new base until a quotient is obtained that is less than the new base.
+
+The ones digit corresponds to the first remainder.
+The next digit corresponds to the remainder after the quotient has been divided by the base again.
+The most significant digit is the first quotient less than the base.
+
+Thus 83 [base 10] is 123 [base 8]  	83/8 = 10	remainder 3
+				10/8  =  1	remainder 2
+				1/8    =  0	remainder 1
+
+Notice that the numbers are written in reverse order of their calculations indicating that a-
+recursive function may be the best way to proceed.
+
+Statements Required:  input, output, decision making
+
+Exact copy:
+Enter the number base 10 to convert:  255
+Enter the new base:  16
+The number 255 [base 10] = FF [base 16]
+
+Enter the number base 10 to convert:  256
+Enter the new base:  16
+The number 255 [base 10] = 100 [base 16]
+
+Enter the number base 10 to convert:  34
+Enter the new base:  8
+The number 255 [base 10] = 42 [base 8]
+
+Enter the number base 10 to convert:  100
+Enter the new base:  3
+The number 255 [base 10] = 10201 [base 3]
+
+Enter the number base 10 to convert:  1034
+Enter the new base:  12
+The number 255 [base 10] = 722 [base 12]
