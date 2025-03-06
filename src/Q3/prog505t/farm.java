@@ -1,18 +1,24 @@
-package Q3.prog505w;
-
+package Q3.prog505t;
 
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 
-public class farm {
+public class farm implements IFarm{
+    private ArrayList<horse> myHorses;
+    private ArrayList<cow> myCows;
+    private int myNumHayBales;
+    private int myNumCorn;
+    private double myHayCost;
+    private double myCornCost;
+
     public static void main(String[] args) {
         try{
-            Scanner file = new Scanner(new File("Langdat/prog505w.dat"));
+            Scanner file = new Scanner(new File("Langdat/prog505t.dat"));
             List<animal> animals = new ArrayList<>();
 
             int hay = file.nextInt();
@@ -62,7 +68,7 @@ public class farm {
             double minHorseValue = Double.MAX_VALUE;
             for(int lcv = 0; lcv < animals.size(); lcv++) {
                 if (animals.get(lcv) instanceof horse) {
-                    horse horse = (horse) animals.get(lcv);
+                    horse horse = (Q3.prog505t.horse) animals.get(lcv);
                     double horseVal = horse.value(cornCost, hayCost);
                     if (horseVal < minHorseValue) {
                         minHorseIndex = lcv;
@@ -78,7 +84,7 @@ public class farm {
             double maxCowValue = Double.MIN_VALUE;
             for (int lcv = 0; lcv < animals.size(); lcv++){
                 if (animals.get(lcv) instanceof cow) {
-                    cow cow = (cow) animals.get(lcv);
+                    cow cow = (Q3.prog505t.cow) animals.get(lcv);
                     double cowVal = cow.value(cornCost, hayCost);
                     if (cowVal > maxCowValue) {
                         maxCowIndex = lcv;
@@ -96,4 +102,37 @@ public class farm {
             System.out.println("Error: " + e);
         }
     }
+
+    private boolean feedCows() { return false; }
+
+    private boolean feedHorses()  { return false; }
+
+    public boolean feedAllAnimals(){
+
+    }
+
+    private double cowIncome(double perPound)  { return 0; }
+
+    private double horseIncome() { return 0; }
+
+    public double farmIncome(){
+
+    }
+
+    public int getWeight(){
+
+    }
+
+    public double getCost(){
+
+    }
+
+    public ArrayList<cow> getCows(){
+
+    }
+
+    public ArrayList<horse> getHorses(){
+
+    }
+
 }
