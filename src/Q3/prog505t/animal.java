@@ -10,8 +10,9 @@ public abstract class animal {
         myWeight = weight;
         myNumCorn = corn;
         myNumHayBales = hay;
+        math.findTotCorn(myNumCorn);
+        math.findTotHay(myNumHayBales);
     }
-
     public abstract double value(double cornCost, double hayCost);
     public String getName() {return myName; }
     public int getWeight() {return myWeight; }

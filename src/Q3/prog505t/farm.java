@@ -92,6 +92,8 @@ public class farm implements IFarm{
                     }
                 }
             }
+
+
             System.out.printf("Cow " + maxCowIndex + "  the most money\n");
 
 
@@ -103,12 +105,23 @@ public class farm implements IFarm{
         }
     }
 
-    private boolean feedCows() { return false; }
+    private boolean feedCows(int nCorn, int nHay) {
+        if (math.getCowCorn() < nCorn || math.getCowHay() < nHay){
+            return true;
+        }
+        else return false; }
 
-    private boolean feedHorses()  { return false; }
+    private boolean feedHorses(int nCorn, int nHay)  {
+        if (math.getHorsesCorn() < nCorn || math.getHorsesHay() < nHay){
+            return true;
+        }
+        else return false; }
 
-    public boolean feedAllAnimals(){
-
+    public boolean feedAllAnimals(int nCorn, int nHay){
+        if (math.getTotHay() < nHay || math.getTotCorn() < nCorn){
+            return true;
+        }
+        else return false;
     }
 
     private double cowIncome(double perPound)  { return 0; }
