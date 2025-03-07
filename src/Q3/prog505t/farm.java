@@ -40,8 +40,6 @@ public class farm implements IFarm{
                     int cornEaten = file.nextInt();
                     cow wow = new cow(name, weight, milk,cornEaten, hayEaten);
                     animals.add(wow);
-                    hay -= hayEaten;
-                    corn -= cornEaten;
                 }
             }
 
@@ -59,8 +57,6 @@ public class farm implements IFarm{
                     double rideCost = file.nextDouble();
                     horse fred = new horse(name, weight,cornEaten, hayEaten, rides, rideCost);
                     animals.add(fred);
-                    hay -= hayEaten;
-                    corn -= cornEaten;
                 }
             }
 
