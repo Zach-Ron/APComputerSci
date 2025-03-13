@@ -26,6 +26,7 @@ public class farm implements IFarm{
             int corn = file.nextInt();
             double cornCost = file.nextDouble();
             int cumulativeWeight = 0;
+            double feedCost = 0;
 
             int cowRows = file.nextInt();
             int cowPens = file.nextInt();
@@ -37,9 +38,12 @@ public class farm implements IFarm{
                     cumulativeWeight += weight;
                     int milk = file.nextInt();
                     int hayEaten = file.nextInt();
+                    math.findTotHay(hayEaten);
                     int cornEaten = file.nextInt();
+                    math.findTotCorn(cornEaten);
                     cow wow = new cow(name, weight, milk,cornEaten, hayEaten);
                     animals.add(wow);
+                    feedCost += (hayEaten * hayCost) + (cornEaten * cornCost);
                 }
             }
 
@@ -52,11 +56,15 @@ public class farm implements IFarm{
                     int weight = file.nextInt();
                     cumulativeWeight += weight;
                     int hayEaten = file.nextInt();
+                    math.findTotHay(hayEaten);
                     int cornEaten = file.nextInt();
+                    math.findTotCorn(cornEaten);
                     int rides = file.nextInt();
                     double rideCost = file.nextDouble();
                     horse fred = new horse(name, weight,cornEaten, hayEaten, rides, rideCost);
                     animals.add(fred);
+                   
+                    feedCost += (hayEaten * hayCost) + (cornEaten * cornCost);
                 }
             }
 
@@ -72,9 +80,6 @@ public class farm implements IFarm{
                     }
                 }
             }
-            System.out.printf("Horse " + minHorseIndex + "  the least money\n");
-            animals.get(minHorseIndex).getName();
-            System.out.println("");
 
             int maxCowIndex = 0;
             double maxCowValue = Double.MIN_VALUE;
@@ -90,7 +95,19 @@ public class farm implements IFarm{
             }
 
 
-            System.out.printf("Cow " + maxCowIndex + "  the most money\n");
+
+            System.out.println("Income Today: " );
+            System.out.println("The cost of feeding the animals is: " + feedCost);
+            System.out.println("All weight together: " + cumulativeWeight);
+            if (feedAllAnimals(corn, hay)){
+                corn -= math.getTotCorn();
+                hay -= math.getTotHay();
+                System.out.println("The remaining corn after feed is: " + corn);
+                System.out.println("The remaining hay after feed is: " + hay);
+            } else System.out.println("Cannot feed animals, not enough food!");
+
+
+
 
 
 
@@ -101,30 +118,36 @@ public class farm implements IFarm{
         }
     }
 
-    private boolean feedCows(int nCorn, int nHay) {
+    private static boolean feedCows(int nCorn, int nHay) {
         if (math.getCowCorn() < nCorn || math.getCowHay() < nHay){
             return true;
         }
         else return false; }
 
-    private boolean feedHorses(int nCorn, int nHay)  {
+    private static boolean feedHorses(int nCorn, int nHay)  {
         if (math.getHorsesCorn() < nCorn || math.getHorsesHay() < nHay){
             return true;
         }
         else return false; }
 
-    public boolean feedAllAnimals(int nCorn, int nHay){
+    public static boolean feedAllAnimals(int nCorn, int nHay){
         if (math.getTotHay() < nHay || math.getTotCorn() < nCorn){
             return true;
         }
         else return false;
     }
 
-    private double cowIncome(double perPound)  { return 0; }
+    private double cowIncome(double perPound)  {
+        double income = 0;
+        return 0; }
 
-    private double horseIncome() { return 0; }
+    private double horseIncome() {
+        double income = 0;
+
+        return 0; }
 
     public double farmIncome(){
+        double income = 0;
 
     }
 
