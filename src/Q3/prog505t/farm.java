@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class farm implements IFarm{
+public class farm /*implements IFarm*/{
     private ArrayList<horse> myHorses;
     private ArrayList<cow> myCows;
     private int myNumHayBales;
@@ -146,7 +146,7 @@ public class farm implements IFarm{
 
         return 0; }
 
-    public double farmIncome(){
+ /*   public double farmIncome(){
         double income = 0;
 
     }
@@ -166,5 +166,5 @@ public class farm implements IFarm{
     public ArrayList<horse> getHorses(){
 
     }
-
+*/
 }
