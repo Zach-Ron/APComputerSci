@@ -5,13 +5,17 @@ import java.util.Scanner;
 public class prog910b {
     public static void main(String[] args){
         int ben = 0;
+        int n1 = 0;
+        int n2 = 0;
             Scanner input = new Scanner(System.in);
             System.out.println("Number: ");
-            CL_910b.setNum(input.nextInt());
+            n1 = input.nextInt();
+            CL_910b.setNum(n1);
             System.out.println("Base: ");
-            CL_910b.setBase(input.nextInt());
+            n2 = input.nextInt();
+            CL_910b.setBase(n2);
             while (ben != -1){
-                System.out.println(CL_910b.Calc());
+                System.out.println(CL_910b.Calc(n1, n2));
             }
     }
 
