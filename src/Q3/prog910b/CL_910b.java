@@ -15,14 +15,18 @@ private static int base;
     }
 
     public static int Calc(int h, int b){
+        int n = h;
+        int ba = b;
         int res;
+        int res1;
+        res1 = num/base;
         res = num % base;
 
         if(res == 0){
-            return res;
+            n = res1;
+            return Calc(n, ba);
         }
-
-        return Calc(num, base);
+        return res;
     }
 
 
