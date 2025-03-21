@@ -1,40 +1,35 @@
 package Q3.prog910b;
 
 public class CL_910b {
-private static int num;
-private static int base;
 
+    private static int num;
+    private static int base;
+    private static int end;
+    private static int count = 0;
 
-
-    public static void setNum(int h){
-        num = h;
-    }
-
-    public static void setBase(int b){
+    public static void Calc(int h, int b){
         base = b;
-    }
-
-    public static int Calc(int h, int b){
-        int n = h;
-        int ba = b;
+        num = h;
         int res;
         int res1;
         res1 = num/base;
         res = num % base;
+        count++;
 
-        if(res == 0){
-            n = res1;
-            return Calc(n, ba);
+        if(res1 <= base) {
+        }else{
+            if (count == 1) {
+                end = res;
+            } else {
+                end = ((int) (end * Math.pow(10, count))) + res;
+            }
+                Calc(res1, b);
         }
-        return res;
+    }
+
+    public static int getCalc(){
+        return end;
     }
 
 
-    public static int getNum(){
-        return num;
-    }
-
-    public static int getBase(){
-        return base;
-    }
 }

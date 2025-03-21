@@ -10,13 +10,11 @@ public class prog910b {
             Scanner input = new Scanner(System.in);
             System.out.println("Number: ");
             n1 = input.nextInt();
-            CL_910b.setNum(n1);
             System.out.println("Base: ");
             n2 = input.nextInt();
-            CL_910b.setBase(n2);
-            while (ben != -1){
-                System.out.println(CL_910b.Calc(n1, n2));
-            }
+            CL_910b.Calc(n1, n2);
+                System.out.println(CL_910b.getCalc());
+
     }
 
     public void uiCall(){
