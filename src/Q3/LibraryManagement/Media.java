@@ -14,4 +14,8 @@ public abstract class Media {
 
     // TODO: Implement getter methods
     public void setCheckedOut(boolean checkedOut) { isCheckedOut = checkedOut; }
+
+    public String getIsbn() { return isbn; }
+
+    public String getTitle() { return title; }
 }
