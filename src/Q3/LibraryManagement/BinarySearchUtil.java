@@ -38,7 +38,10 @@ public class BinarySearchUtil {
     }
 
 
-    public
+    public String searchByName()
+    {
+
+    }
     //Note: if .compareToIgnoreCase returns num < 0 then the parameter sent in comes first and vice versa.
     //Check for numbers of 1, -1, or 0.
 
@@ -55,4 +58,9 @@ public class BinarySearchUtil {
         return sortedAuthor;
     }
 
+
+    public String searchByName()
+    {
+
+    }
 }
