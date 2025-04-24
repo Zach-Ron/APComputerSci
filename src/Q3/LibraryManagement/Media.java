@@ -12,6 +12,7 @@ public abstract class Media {
         isbn = nbsi;
     }
 
+
     // TODO: Implement getter methods
     public void setCheckedOut(boolean checkedOut) { isCheckedOut = checkedOut; }
 

@@ -14,7 +14,8 @@ import java.util.ArrayList;
 
         // Implement interface methods
         @Override
-        public void addBook(Book book) { /* Implementation; remember to add in sorted order */ }
+        public void addBook(Book book) { sortByTitle(books.add(book)); }
+
         @Override
         public void removeBook(String isbn) { /* Implementation */ }
         // Other methods...
