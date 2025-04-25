@@ -4,14 +4,20 @@ import java.util.ArrayList;
 
 public class BinarySearchUtil {
 
-    public ArrayList sortByTitle(ArrayList<Book> original)
+    private ArrayList<Book> sortedTitle = new ArrayList<String>();
+    private ArrayList <Book> classOG;
+
+    public BinarySearchUtil(ArrayList<Book> original){
+        classOG = original;
+    }
+
+    public ArrayList<Book> sortByTitle()
     {
-        ArrayList<Book> copyOG = original;
-        ArrayList sortedTitle = new ArrayList<String>();
-        String current = original.get(0).getTitle(); //current is current largest string value
-        String smallest = original.get(0).getTitle();//smallest string value
+        ArrayList <Book> copyOG = classOG;
+        String current = classOG.get(0).getTitle(); //current is current largest string value
+        String smallest = classOG.get(0).getTitle();//smallest string value
         sortedTitle.add(current);
-        while (sortedTitle.size() > original.size())
+        while (sortedTitle.size() > classOG.size())
         {
              byte loop = 1;
             for (int lcv = 1; lcv < copyOG.size(); lcv++)

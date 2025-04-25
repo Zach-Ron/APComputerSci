@@ -9,15 +9,35 @@ import java.util.ArrayList;
         private ArrayList<Book> books;
         private ArrayList<Patron> patrons;
         private ArrayList<Transaction> transactions;
+        private BinarySearchUtil sorts;
 
         // TODO: Implement the constructor
 
+        public Library(ArrayList<Book> catalog){
+            books = catalog;
+            sorts = new BinarySearchUtil(books);
+        }
+
         // Implement interface methods
         @Override
-        public void addBook(Book book) { sortByTitle(books.add(book)); }
+        public void addBook(Book book)
+        {
+            books.add(book);
+            sorts = new BinarySearchUtil(books);
+            sorts.sortByTitle();
+        }
 
         @Override
-        public void removeBook(String isbn) { /* Implementation */ }
+        public void removeBook(String isbn)
+        {
+            for (int i = 0; i < books.size(); i++)
+                if (books.get(i).getIsbn().equals(isbn)){
+                    books.remove(i);
+                    sorts = new BinarySearchUtil(books);
+                    sorts.sortByTitle();
+                    break;
+                }
+        }
         // Other methods...
 
         @Override

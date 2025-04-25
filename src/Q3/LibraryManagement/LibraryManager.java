@@ -32,5 +32,6 @@ import java.util.Scanner;
         }
 
         // TODO: Implement main program; make a new Library object, load the catalog,
+        Library library = new Library(loadCatalog());
         // add each book from the catalog to the library, then display the menu
 }
