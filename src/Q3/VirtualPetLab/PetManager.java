@@ -24,12 +24,12 @@ public class PetManager {
     }
     public ArrayList<String> getPetsNames()
     {
-        ArrayList<String> petNameList;
+        ArrayList<String> petNameList = new ArrayList<>();
         for (int i = 0; i < pets.size(); i++){
-            pets.get(i);
+            petNameList.add(pets.get(i).getName());
         }
 
-        return pets;
+        return petNameList;
     }
 
 }
