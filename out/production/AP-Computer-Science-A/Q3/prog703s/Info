@@ -1,0 +1,44 @@
+Program Description: You are to write a program that keeps track of all of the computers in the school.
+ Within your school you have a bunch of computers who all have types.
+ These computers are either Apple, who have a color(String), windows, who have a widows version number(double),
+ or linux who have a special hidden code(int).  Every computer comes with certain attributes.
+  Every computer has a name, a number and a designated value.
+
+
+You are to find out how many of the Apple computers are Green or Gold(note the capitalization).
+You are to find out how many of the windows machines are on version 7.0.
+You are to find out how many of the linux machines have a secret code number that ends in a 5.
+Apple computers will have a data file designation of a 1 and their name, number, value and color will follow that.
+The Windows machines will have a code of a 2 and their name, number, value and version number will follow that.
+Finally the linux machines will have a code of a 3 and their name, number, value and special code will follow that.
+You are only allowed to use one ArrayList.
+
+Required Statements: Interface, Superclass, subclass, ArrayList
+
+You should use the following interface:
+
+public interface comps
+{
+	public String getName();
+	public int getNumber();
+	public double getValue();
+}
+
+
+Data Location: prog703s.dat
+
+
+
+
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Results:
+The amount of macs with Green and Gold is: 1
+The amount of Windows machines on V 7.0 is: 2
+The amount of Linux codes that end with 5 is: 4

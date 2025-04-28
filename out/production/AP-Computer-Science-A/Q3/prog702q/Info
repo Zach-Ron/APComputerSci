@@ -1,0 +1,51 @@
+Program Description: You are to write a program that keeps track of a bunch of vehicles.
+ Each vehicle has one name and how many tires the vehicle has.  Each vehicle also keeps track of its worth.
+ Trucks and busses are all worth $50,000 each.
+ Trucks always report their worth by using the original price and then subtracting .25 a mile.
+  The value of the cars is read in from the data file.
+  There are then three different types of vehicles.
+  The first type of vehicles, the cars, they like to keep track of how much money they are worth.
+   The second type of vehicles are the trucks, they keep track of how many miles they take each and every day.
+     The third type of vehicles are the buses, the buses keep a track of their home city.
+      The vehicles will be designated in the data file by a 1 for the cars, a 2 for the trucks and a 3 for the busses.
+       Within the data file, once a car is designated, it is followed by it’s name, it’s number of tires, then it’s worth.
+        Once a truck is designated, it is followed by the truck’s name, then the number of tires, then the millage.
+         Once a bus is designated, it is followed by the name of the bus,
+         the number of tires on the bus and then the busses home town.
+          You are to read the entire data file.
+
+You are to calculate the total number of vehicles.  You are to calculate the total amount that the cars are worth.
+You are to calculate the total amount that the vehicles are worth.
+You are to report the longest home destination name for all of the busses.
+ You are to report which truck has the least value.
+  You are to report the total number of tires in each of the three classes of vehicles.
+
+Required Statements: Interface, Superclass, subclass, ArrayList
+
+You should use the following interface:
+
+public interface names
+{
+	public String getName();
+	public int getTire();
+	public double getValue();
+}
+
+
+Data Location: prog702q.txt
+
+
+
+result:
+Total number of vehicles: 13
+Total price of cars: 33950.0
+Total price of all vehicles: 533950.0
+Longest city name: GreenBay
+Cheapest truck: Fred
+Total number of tires on cars: 15
+Total number of tires on trucks: 95
+Total number of tires on buses: 69
+
+Process finished with exit code 0
+
+
