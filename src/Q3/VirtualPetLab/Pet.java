@@ -38,8 +38,9 @@ public abstract class Pet {
 
     public String status()
     {
+        String status;
 
-        return
+        return null;
     }
 
     // It may also be help to make a public/protected "clampAttributes()" method to ensure that the pet's attributes do

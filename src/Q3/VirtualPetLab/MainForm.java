@@ -81,6 +81,7 @@ public class MainForm extends JFrame {
     public void updatePetList() {
         petSelectorComboBox.removeAllItems();  // Clear existing items
         // TODO: Update petSelectorComboBox with pet names from petManager
+        petSelectorComboBox.addItem(petManager.getPets().toString());
         // After adding the pet, set the selected index to the last item (petManager.getPets().size() - 1)
     }
 
