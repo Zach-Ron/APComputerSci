@@ -83,7 +83,7 @@ public class MainForm extends JFrame {
         // TODO: Update petSelectorComboBox with pet names from petManager
         for (int i = 0; i < petManager.getPetsNames().size(); i++)
         petSelectorComboBox.addItem(petManager.getPetsNames().get(i));
-        // After adding the pet, set the selected index to the last item (petManager.getPets().size() - 1)
+        petSelectorComboBox.setSelectedItem(petManager.getPets().size() - 1);
     }
 
     /* ========== DO NOT MODIFY BELOW ========== */
