@@ -1,6 +1,7 @@
 package Q3.VirtualPetLab;
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +16,7 @@ public class MainForm extends JFrame {
     private JComboBox<String> petSelectorComboBox;
     // TODO: add adoption buttons
     // Pet list
+    private ArrayList<Pet> petList;
     private PetManager petManager = new PetManager();
 
     public MainForm() {
@@ -65,8 +67,12 @@ public class MainForm extends JFrame {
                 if (petSelectorComboBox.getSelectedIndex() == -1) return;
 
                 // TODO: Implement pet selection change
+                petList = petManager.getPets();
+                petList.get(petSelectorComboBox.getSelectedIndex());
                 // 1. Grab the current pet from the petManager using petSelectorComboBox.getSelectedIndex()
+                updateStatusLabel(petList.get(petSelectorComboBox.getSelectedIndex()).status());
                 // 2. Update statusLabel with the selected pet's status
+                setPetImage(petList.get(petSelectorComboBox.getSelectedIndex()).getImage());
                 // 3. Update imageLabel with the selected pet's image using setPetImage()
             }
         });
@@ -76,6 +82,7 @@ public class MainForm extends JFrame {
 
     public void updateStatusLabel(String status) {
         // TODO: Update statusLabel with the provided status
+        statusLabel.setText(status);
     }
 
     public void updatePetList() {

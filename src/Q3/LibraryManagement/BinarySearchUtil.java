@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BinarySearchUtil {
 
-    private ArrayList<Book> sortedTitle = new ArrayList<String>();
+    private ArrayList<Book> sortedTitle = new ArrayList<>();
     private ArrayList <Book> classOG;
 
     public BinarySearchUtil(ArrayList<Book> original){
@@ -16,7 +16,7 @@ public class BinarySearchUtil {
         ArrayList <Book> copyOG = classOG;
         String current = classOG.get(0).getTitle(); //current is current largest string value
         String smallest = classOG.get(0).getTitle();//smallest string value
-        sortedTitle.add(current);
+        sortedTitle.add(classOG.get(0));
         while (sortedTitle.size() > classOG.size())
         {
              byte loop = 1;
@@ -25,15 +25,15 @@ public class BinarySearchUtil {
                 if (current.compareToIgnoreCase(copyOG.get(lcv).getTitle()) == -loop)
                 {
                     current = copyOG.get(lcv).getTitle();
+                    sortedTitle.add(0, copyOG.get(lcv));
                     copyOG.remove(lcv);
-                    sortedTitle.add(0, current);
 
                 }
                 else if (smallest.compareToIgnoreCase(copyOG.get(lcv).getTitle()) == loop)
                 {
                     smallest = copyOG.get(lcv).getTitle();
+                    sortedTitle.add(copyOG.get(lcv));
                     copyOG.remove(lcv);
-                    sortedTitle.add(smallest);
                     lcv--;
                 }
             }

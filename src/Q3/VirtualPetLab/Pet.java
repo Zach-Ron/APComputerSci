@@ -43,6 +43,16 @@ public abstract class Pet {
         return null;
     }
 
+    public void clampAttributes()
+    {
+        if (hunger > MAX_HUNGER)
+            hunger = MAX_HUNGER;
+        if (energy > MAX_ENERGY)
+            energy = MAX_ENERGY;
+        if (happiness > MAX_HAPPINESS)
+            happiness = MAX_HAPPINESS;
+    }
+
     // It may also be help to make a public/protected "clampAttributes()" method to ensure that the pet's attributes do
     // not exceed their maximum values or drop below 0 when feeding/playing/sleeping. Call this method using 'super'.
 }
