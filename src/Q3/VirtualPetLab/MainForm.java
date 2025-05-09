@@ -39,7 +39,10 @@ public class MainForm extends JFrame {
         feedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                waitButtons(1);
                 // TODO: Implement feeding the selected pet
+                petList.get(petSelectorComboBox.getSelectedIndex()).feed();
+                updateStatusLabel(petList.get(petSelectorComboBox.getSelectedIndex()).status());
             }
         });
 
@@ -47,7 +50,9 @@ public class MainForm extends JFrame {
         playButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                waitButtons(1);
                 // TODO: Implement playing with the selected pet
+                petList.get(petSelectorComboBox.getSelectedIndex()).play();
             }
         });
 
@@ -55,7 +60,9 @@ public class MainForm extends JFrame {
         sleepButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                waitButtons(1);
                 // TODO: Implement putting the selected pet to sleep
+                petList.get(petSelectorComboBox.getSelectedIndex()).sleep();
             }
         });
 

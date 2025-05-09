@@ -39,8 +39,8 @@ public abstract class Pet {
     public String status()
     {
         String status;
-
-        return null;
+        status = "Hunger: " + getHunger() + "  Energy: " + getEnergy() + "  Happiness: " + getHappiness();
+        return status;
     }
 
     public void clampAttributes()
