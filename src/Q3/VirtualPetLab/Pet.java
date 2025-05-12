@@ -47,10 +47,16 @@ public abstract class Pet {
     {
         if (hunger > MAX_HUNGER)
             hunger = MAX_HUNGER;
+        else if (hunger < 0)
+                 hunger = 0;
         if (energy > MAX_ENERGY)
             energy = MAX_ENERGY;
+        else if (energy < 0)
+                 energy = 0;
         if (happiness > MAX_HAPPINESS)
             happiness = MAX_HAPPINESS;
+        else if (happiness < 0)
+                 happiness = 0;
     }
 
     // It may also be help to make a public/protected "clampAttributes()" method to ensure that the pet's attributes do
