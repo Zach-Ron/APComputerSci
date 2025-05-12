@@ -31,15 +31,15 @@ public class GenericsAndTernary {
     switch(thing){
         case LOW ->
                 {
-
+                    System.out.print("Graphics Low");
         }
         case MED ->
                 {
-
+                    System.out.print("Graphics Med");
         }
         case HIGH ->
                 {
-
+                    System.out.print("Graphics High");
                 }
 
 
