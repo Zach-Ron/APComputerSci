@@ -21,6 +21,7 @@ public class Dog extends Pet {
         super.setEnergy((int) (super.getEnergy() - ((Math.random() * 10) + 5)));
         super.setHunger((int) (super.getHunger() + ((Math.random() * 7) + 5)));
         super.setHappiness((int) (super.getHappiness() + ((Math.random() * 5) + 10)));
+        super.clampAttributes();
     }
 
     @Override
@@ -29,5 +30,6 @@ public class Dog extends Pet {
         super.setEnergy((int) (super.getEnergy() + ((Math.random() * 10) + 5)));
         super.setHunger((int) (super.getHunger() + ((Math.random() * 7) + 5)));
         super.setHappiness((int) (super.getHappiness() + ((Math.random() * 5) + 10)));
+        super.clampAttributes();
     }
 }

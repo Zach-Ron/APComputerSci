@@ -53,6 +53,7 @@ public class MainForm extends JFrame {
                 waitButtons(1);
                 // TODO: Implement playing with the selected pet
                 petList.get(petSelectorComboBox.getSelectedIndex()).play();
+                updateStatusLabel(petList.get(petSelectorComboBox.getSelectedIndex()).status());
             }
         });
 
@@ -63,6 +64,7 @@ public class MainForm extends JFrame {
                 waitButtons(1);
                 // TODO: Implement putting the selected pet to sleep
                 petList.get(petSelectorComboBox.getSelectedIndex()).sleep();
+                updateStatusLabel(petList.get(petSelectorComboBox.getSelectedIndex()).status());
             }
         });
 
