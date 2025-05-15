@@ -14,6 +14,7 @@ public class MainForm extends JFrame {
     private JLabel statusLabel;
     private JLabel imageLabel;
     private JComboBox<String> petSelectorComboBox;
+    private JButton adoptButton;
     // TODO: add adoption buttons
     // Pet list
     private ArrayList<Pet> petList;
@@ -34,6 +35,17 @@ public class MainForm extends JFrame {
         petManager.addPet(new Cat("Whiskers"));
         this.updatePetList();
         petSelectorComboBox.setSelectedItem(null);  // Clear selection after populating
+
+
+        adoptButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                waitButtons(1);
+                System.out.print("Type the name of your new pet: ");
+
+            }
+        });
+
 
         // Feed button action
         feedButton.addActionListener(new ActionListener() {
