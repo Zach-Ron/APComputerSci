@@ -46,7 +46,7 @@ public class MainForm extends JFrame {
                 String type;
                 waitButtons(1);
                 Scanner input = new Scanner(System.in);
-                System.out.println("What type of pet do you want: Cat/Dog");
+                System.out.println("What type of pet do you want: Cat/Dog ");
                 type = input.next().trim().toLowerCase();
                 System.out.println("Type the name of your new pet: ");
                 name = input.next();
