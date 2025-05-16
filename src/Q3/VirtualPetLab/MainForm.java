@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class MainForm extends JFrame {
     private JPanel mainPanel;
@@ -40,9 +42,35 @@ public class MainForm extends JFrame {
         adoptButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String name;
+                String type;
                 waitButtons(1);
-                System.out.print("Type the name of your new pet: ");
+                Scanner input = new Scanner(System.in);
+                System.out.println("What type of pet do you want: Cat/Dog");
+                type = input.next().trim().toLowerCase();
+                System.out.println("Type the name of your new pet: ");
+                name = input.next();
+                while (name.trim().equals(null) || name.trim().equals("")) {
+                    name = input.next();
+                    for (int i = 0; i < petManager.getPetsNames().size(); i++) {
+                        if (petManager.getPetsNames().get(i).trim().toLowerCase().equals(name)) {
+                            name = null;
+                        }
+                    }
+                }
 
+                switch (type){
+                    case ("cat") :
+                    {
+                        petManager.addPet(new Cat(name));
+                    }
+                    case ("dog") :
+                    {
+                        petManager.addPet(new Dog(name));
+                    }
+
+                    updatePetList();
+                }
             }
         });
 
@@ -107,6 +135,7 @@ public class MainForm extends JFrame {
     }
 
     public void updatePetList() {
+        petList = petManager.getPets();
         petSelectorComboBox.removeAllItems();  // Clear existing items
         // TODO: Update petSelectorComboBox with pet names from petManager
         for (int i = 0; i < petManager.getPetsNames().size(); i++)
@@ -120,6 +149,7 @@ public class MainForm extends JFrame {
         feedButton.setEnabled(false);
         playButton.setEnabled(false);
         sleepButton.setEnabled(false);
+        adoptButton.setEnabled(false);
 
         // Set a timer to re-enable the buttons after N seconds (1000 ms = 1 second)
         Timer timer = new Timer(seconds * 1000, new ActionListener() {
@@ -128,6 +158,7 @@ public class MainForm extends JFrame {
                 feedButton.setEnabled(true);
                 playButton.setEnabled(true);
                 sleepButton.setEnabled(true);
+                adoptButton.setEnabled(true);
             }
         });
         timer.setRepeats(false); // Ensure the timer only runs once
