@@ -50,13 +50,13 @@ public class MainForm extends JFrame {
                 type = input.next().trim().toLowerCase();
                 System.out.println("Type the name of your new pet: ");
                 name = input.next();
+                for (int i = 0; i < petManager.getPetsNames().size(); i++) {
+                    if (petManager.getPetsNames().get(i).trim().toLowerCase().equals(name)) {
+                        name = null;
+                    }
+                }
                 while (name.trim().equals(null) || name.trim().equals("")) {
                     name = input.next();
-                    for (int i = 0; i < petManager.getPetsNames().size(); i++) {
-                        if (petManager.getPetsNames().get(i).trim().toLowerCase().equals(name)) {
-                            name = null;
-                        }
-                    }
                 }
 
                 switch (type){
