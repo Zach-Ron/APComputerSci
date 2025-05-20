@@ -57,6 +57,7 @@ public class MainForm extends JFrame {
                 }
                 while (name.trim().equals(null) || name.trim().equals("")) {
                     name = input.next();
+
                 }
 
                 switch (type){
