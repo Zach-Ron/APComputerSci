@@ -32,7 +32,7 @@ public class prog7000l {
 
             var lr = new LinearRegression(60, 100, 0.000_0001, 0.00001);
 
-            lr.fit(X_train, Y_train, 100);
+            lr.fit(X_train, Y_train, 25);
             System.out.println(lr);
 
 

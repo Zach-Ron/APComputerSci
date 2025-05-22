@@ -42,6 +42,8 @@ public class MainForm extends JFrame {
         adoptButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                //TODO how to create a floating input box in java swing
                 String name;
                 String type;
                 waitButtons(1);
@@ -60,18 +62,16 @@ public class MainForm extends JFrame {
 
                 }
 
-                switch (type){
-                    case ("cat") :
+                    if (type.equals("cat"))
                     {
                         petManager.addPet(new Cat(name));
                     }
-                    case ("dog") :
+                    else if(type.equals("dog"))
                     {
                         petManager.addPet(new Dog(name));
                     }
 
                     updatePetList();
-                }
             }
         });
 
