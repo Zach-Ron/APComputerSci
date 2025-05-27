@@ -17,7 +17,6 @@ public class MainForm extends JFrame {
     private JLabel imageLabel;
     private JComboBox<String> petSelectorComboBox;
     private JButton adoptButton;
-    // TODO: add adoption buttons
     // Pet list
     private ArrayList<Pet> petList;
     private PetManager petManager = new PetManager();
@@ -43,7 +42,6 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                //TODO how to create a floating input box in java swing
                 String name;
                 String type;
                 waitButtons(1);
@@ -81,7 +79,6 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 waitButtons(1);
-                // TODO: Implement feeding the selected pet
                 petList.get(petSelectorComboBox.getSelectedIndex()).feed();
                 updateStatusLabel(petList.get(petSelectorComboBox.getSelectedIndex()).status());
             }
@@ -92,7 +89,6 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 waitButtons(1);
-                // TODO: Implement playing with the selected pet
                 petList.get(petSelectorComboBox.getSelectedIndex()).play();
                 updateStatusLabel(petList.get(petSelectorComboBox.getSelectedIndex()).status());
             }
@@ -103,7 +99,6 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 waitButtons(1);
-                // TODO: Implement putting the selected pet to sleep
                 petList.get(petSelectorComboBox.getSelectedIndex()).sleep();
                 updateStatusLabel(petList.get(petSelectorComboBox.getSelectedIndex()).status());
             }
@@ -116,7 +111,6 @@ public class MainForm extends JFrame {
                 // Make sure the action event isn't triggered by the removeAllItems() call
                 if (petSelectorComboBox.getSelectedIndex() == -1) return;
 
-                // TODO: Implement pet selection change
                 petList = petManager.getPets();
                 petList.get(petSelectorComboBox.getSelectedIndex());
                 // 1. Grab the current pet from the petManager using petSelectorComboBox.getSelectedIndex()
@@ -127,18 +121,15 @@ public class MainForm extends JFrame {
             }
         });
 
-        // TODO: Implement adoption button actions
     }
 
     public void updateStatusLabel(String status) {
-        // TODO: Update statusLabel with the provided status
         statusLabel.setText(status);
     }
 
     public void updatePetList() {
         petList = petManager.getPets();
         petSelectorComboBox.removeAllItems();  // Clear existing items
-        // TODO: Update petSelectorComboBox with pet names from petManager
         for (int i = 0; i < petManager.getPetsNames().size(); i++)
         petSelectorComboBox.addItem(petManager.getPetsNames().get(i));
         petSelectorComboBox.setSelectedItem(petManager.getPets().size() - 1);
