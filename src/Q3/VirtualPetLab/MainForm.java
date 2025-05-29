@@ -45,20 +45,17 @@ public class MainForm extends JFrame {
                 String name;
                 String type;
                 waitButtons(1);
-                Scanner input = new Scanner(System.in);
-                System.out.println("What type of pet do you want: Cat/Dog ");
-                type = input.next().trim().toLowerCase();
-                System.out.println("Type the name of your new pet: ");
-                name = input.next();
-                for (int i = 0; i < petManager.getPetsNames().size(); i++) {
-                    if (petManager.getPetsNames().get(i).trim().toLowerCase().equals(name)) {
-                        name = null;
+                type = JOptionPane.showInputDialog("What type of pet do you want: Cat/Dog ").trim().toLowerCase();
+                do {
+                    name = JOptionPane.showInputDialog("Enter new pet name: ");
+                    for (int i = 0; i < petManager.getPetsNames().size(); i++) {
+                        if (petManager.getPetsNames().get(i).trim().toLowerCase().equals(name.trim().toLowerCase())) {
+                            name = null;
+                        }
                     }
                 }
-                while (name.trim().equals(null) || name.trim().equals("")) {
-                    name = input.next();
+                while (name.trim() == null|| name.trim().equals(""));
 
-                }
 
                     if (type.equals("cat"))
                     {
