@@ -1,5 +1,7 @@
 package Q3.VirtualPetLab;
 
+import java.util.Timer;
+
 public abstract class Pet {
     private final String name;
     private String image;  // Base64
@@ -34,7 +36,6 @@ public abstract class Pet {
     public abstract void play();
     public abstract void sleep();
 
-    // TODO: Add a public method to return the pet's status as a string
 
     public String status()
     {
@@ -43,23 +44,21 @@ public abstract class Pet {
         return status;
     }
 
-    public void clampAttributes()
+    protected void clampAttributes()
     {
-        if (hunger > MAX_HUNGER)
-            hunger = MAX_HUNGER;
-        else if (hunger < 0)
-                 hunger = 0;
-        if (energy > MAX_ENERGY)
-            energy = MAX_ENERGY;
-        else if (energy < 0)
-                 energy = 0;
-        if (happiness > MAX_HAPPINESS)
-            happiness = MAX_HAPPINESS;
-        else if (happiness < 0)
-                 happiness = 0;
+        if (getHunger() > MAX_HUNGER)
+            setHunger(MAX_HUNGER);
+        else if (getHunger() < 0)
+                 setHunger(0);
+        if (getEnergy() > MAX_ENERGY)
+            setEnergy(MAX_ENERGY);
+        else if (getEnergy() < 0)
+                 setEnergy(0);
+        if (getHappiness() > MAX_HAPPINESS)
+            setHappiness(MAX_HAPPINESS);
+        else if (getHappiness() < 0)
+                 setHappiness(0);
     }
 
-    // It may also be help to make a public/protected "clampAttributes()" method to ensure that the pet's attributes do
-    // not exceed their maximum values or drop below 0 when feeding/playing/sleeping. Call this method using 'super'.
 }
 
